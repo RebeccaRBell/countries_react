@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CountriesList from '../components/CountriesList';
 import CountryDetail from '../components/CountryDetail';
+import Favourites from '../components/Favourites';
 
 const CountriesContainer = () => {
         
         const [allCountries, setAllCountries] = useState([]);
-        const [selectedCountry, setSelectedCountry] = useState([]);
-        const favouriteCountries = [];
+        const [selectedCountry, setSelectedCountry] = useState(null);
+        const [favCountries, setFavCountries] = useState([]);
 
 
         useEffect(() => {
-          getCountries();
-        }, [])
+        getCountries();
+        },
+        )
 
         const getCountries = function(){
                 fetch('https://restcountries.com/v3.1/all')
@@ -23,14 +25,11 @@ const CountriesContainer = () => {
                 setSelectedCountry(country);
         }
 
-        const onFavourited = function(country){
-                favouriteCountries.push(country);
-        }
 
         return (
                 <div>
                 <h1>Countries of The World </h1>
-                        <CountriesList countries={allCountries} onCountryClicked = {onCountryClicked}/>
+                        <CountriesList countries={allCountries} onCountryClicked = {onCountryClicked}/><span><Favourites  favCountries={favCountries}/></span>
                         {selectedCountry ? <CountryDetail country={selectedCountry} /> : null}
                         
                 </div>

@@ -1,5 +1,20 @@
 .App {
   text-align: center;
+  font-family:  'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.App h3{
+  padding: 0px;
+  margin: 5px;
+}
+
+select {
+  width: 300px;
+  height: 30px;
+  border-radius: 10px;
+  padding-left: 10px;
+  margin: 5px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .country-list li{
@@ -7,6 +22,35 @@
   padding: 10px;
 }
 
-img {
-  width: 250px;
+.flag {
+  padding-top: 20px;
+  width: 350px;
+}
+.coat-of-arms {
+  padding: 30px;
+  max-height: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+.heart {
+  color: black;
+  opacity: 0.3;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+    padding-bottom: 20px;
+}
+
+.heart:hover {
+  animation: heartbeat 1s infinite;
+  fill: red;
+  color: red;
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+button {
+  background: none;
+  border: none;
 }
